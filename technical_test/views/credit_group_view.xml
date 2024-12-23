@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+
+        <record id="view_credit_group_form" model="ir.ui.view">
+            <field name="name">credit.group.form</field>
+            <field name="model">credit.group</field>
+            <field name="arch" type="xml">
+                <form string="Credit Group">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="code" required="1"/>
+                                <field name="sale_channel_id" required="1"/>
+                                <field name="global_credit" required="1"/>
+                                <field name="credit_used" readonly="1"/>
+                                <field name="credit_available" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_credit_group_tree" model="ir.ui.view">
+            <field name="name">credit.group.tree</field>
+            <field name="model">credit.group</field>
+            <field name="arch" type="xml">
+                <tree string="Credit Groups">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="sale_channel_id"/>
+                    <field name="global_credit"/>
+                    <field name="credit_used"/>
+                    <field name="credit_available"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_credit_group" model="ir.actions.act_window">
+            <field name="name">Credit Groups</field>
+            <field name="res_model">credit.group</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+        <menuitem id="menu_credit_group" 
+            name="Credit Groups" 
+            parent="sale.menu_sale_config"
+            action="action_credit_group"
+            sequence="7"/>
+    </data>
+</odoo>

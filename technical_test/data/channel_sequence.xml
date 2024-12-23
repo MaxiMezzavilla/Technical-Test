@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_sale_channel_code" model="ir.sequence">
+            <field name="name">Secuencia para Canales de Venta</field>
+            <field name="code">sale.channel.code</field>
+            <field name="padding">6</field>
+            <field name="prefix">CH</field>
+        </record>
+    </data>
+</odoo>

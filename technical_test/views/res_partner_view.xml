@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_view_form" model="ir.ui.view">
+        <field name="name">res.partner.view.form.inherit.credit.group</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <div>
+                    <label for="credit_control"/>
+                    <field name="credit_control" groups="base.group_user"/>
+                    <field name="credit_groups"  groups="base.group_user" 
+                        attrs="{'invisible': [('credit_control', '=', False)]}"/>
+                </div>
+            </field>
+        </field>
+    </record>
+</odoo>
